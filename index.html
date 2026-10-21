@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce a Gabriela: estudiante de Iquitos interesada en política, geopolítica, feminismo y activismo ambiental.">
+  <meta name="theme-color" content="#fbfaf6">
+  <title>Gabriela | Ideas que también echan raíces</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202c35;
+      --muted: #5d6b73;
+      --paper: #fbfaf6;
+      --white: #fff;
+      --sky: #d9eef5;
+      --sky-dark: #397b91;
+      --red: #a6373b;
+      --red-soft: #f5e4e1;
+      --line: #e6e4dc;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--sky-dark); outline-offset: 4px; }
+    img { display: block; width: 100%; object-fit: cover; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      max-width: 1160px;
+      margin: auto;
+      padding: 20px 30px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 800; text-decoration: none; }
+    .brand-mark { display: grid; width: 34px; height: 34px; place-items: center; color: var(--white); background: var(--red); border-radius: 50%; font-size: 17px; }
+    nav { display: flex; flex-wrap: wrap; gap: 23px; }
+    nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    nav a:hover { color: var(--red); }
+
+    .hero { padding: 20px 30px 64px; }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1100px;
+      min-height: 450px;
+      margin: auto;
+      padding: 54px 58px;
+      overflow: hidden;
+      background: #e8f3f4;
+      border-radius: 5px;
+    }
+    .eyebrow, .section-number { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: 1.35px; text-transform: uppercase; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    h1 { max-width: 560px; margin: 18px 0; font-size: clamp(43px, 6vw, 72px); line-height: 1.02; letter-spacing: -1.7px; }
+    .hero-copy { max-width: 510px; margin: 0; color: #445862; font-size: 15px; line-height: 1.8; }
+    .hero-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding: 12px 16px; color: var(--white); background: var(--red); border-radius: 3px; font-size: 13px; font-weight: 800; text-decoration: none; }
+    .hero-link:hover { background: #862a30; }
+    .hero-link span { font-size: 17px; }
+    .photo-board { position: relative; min-height: 315px; }
+    .photo-main { position: absolute; top: 7px; right: 18px; width: 72%; height: 285px; padding: 8px; background: var(--white); box-shadow: 0 12px 30px rgb(32 44 53 / 12%); transform: rotate(2deg); }
+    .photo-main img { height: 100%; }
+    .photo-note { position: absolute; right: 5px; bottom: 4px; padding: 10px 13px; color: var(--ink); background: #fff5d8; box-shadow: 0 5px 15px rgb(32 44 53 / 10%); font-size: 11px; font-weight: 800; transform: rotate(-3deg); }
+    .photo-small { position: absolute; z-index: 1; bottom: 2px; left: 4px; width: 42%; height: 132px; padding: 7px; background: var(--white); box-shadow: 0 9px 22px rgb(32 44 53 / 14%); transform: rotate(-5deg); }
+    .photo-small img { height: 100%; }
+    .hero-stamp { position: absolute; top: 28px; right: 28px; display: grid; width: 62px; height: 62px; place-items: center; color: var(--red); border: 1px solid rgb(166 55 59 / 45%); border-radius: 50%; font-family: Georgia, "Times New Roman", serif; font-size: 12px; line-height: 1.15; text-align: center; transform: rotate(10deg); }
+
+    main { max-width: 1100px; margin: auto; padding: 0 30px; }
+    section { padding: 65px 0; border-bottom: 1px solid var(--line); }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 28px; }
+    h2 { margin: 9px 0 0; font-size: clamp(30px, 4vw, 43px); line-height: 1.12; }
+    .section-intro { max-width: 390px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+
+    .day-card { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 235px; background: var(--white); }
+    .day-photo { min-height: 235px; }
+    .day-copy { align-self: center; padding: 34px 40px; }
+    .day-copy h3 { margin: 0 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; }
+    .day-copy p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .day-label { display: inline-block; margin-bottom: 13px; color: var(--sky-dark); font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+
+    .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .pillar-card { min-height: 238px; padding: 24px; background: var(--white); border-top: 3px solid var(--sky-dark); }
+    .pillar-card:nth-child(2) { border-color: var(--red); }
+    .pillar-card:nth-child(3) { border-color: #d2a944; }
+    .pillar-icon { display: grid; width: 38px; height: 38px; place-items: center; margin-bottom: 22px; background: var(--sky); border-radius: 50%; font-size: 18px; }
+    .pillar-card:nth-child(2) .pillar-icon { background: var(--red-soft); }
+    .pillar-card:nth-child(3) .pillar-icon { background: #f8f0d8; }
+    .pillar-card h3 { margin: 0 0 9px; font-size: 16px; }
+    .pillar-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+
+    .notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .note { min-height: 160px; padding: 22px; background: #fff2c9; box-shadow: 0 5px 13px rgb(32 44 53 / 6%); transform: rotate(-1deg); }
+    .note:nth-child(2) { background: #e3f1f4; transform: rotate(1deg); }
+    .note:nth-child(3) { background: #f6e8e5; transform: rotate(-.5deg); }
+    .note-label { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    .note p { margin: 13px 0 0; font-family: Georgia, "Times New Roman", serif; font-size: 19px; line-height: 1.4; }
+
+    .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; padding: 62px 0 70px; border-bottom: 0; }
+    .contact h2 { max-width: 420px; }
+    .contact-copy { max-width: 490px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .contact-note { display: inline-block; margin-top: 15px; padding: 10px 13px; color: var(--red); background: var(--red-soft); font-size: 12px; font-weight: 800; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding: 20px max(30px, calc((100vw - 1040px) / 2)); color: #e5eeee; background: #263940; font-size: 11px; }
+
+    @media (max-width: 760px) {
+      .topbar { align-items: flex-start; flex-direction: column; padding: 18px 22px; }
+      nav { gap: 16px; }
+      .hero { padding: 12px 18px 42px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 20px; padding: 38px 28px 25px; }
+      .hero-stamp { top: 18px; right: 18px; }
+      .photo-board { min-height: 275px; }
+      .photo-main { right: 13%; width: 66%; height: 245px; }
+      .photo-small { left: 6%; height: 112px; }
+      main { padding: 0 22px; }
+      section { padding: 52px 0; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 13px; }
+      .pillar-grid, .notes-grid { grid-template-columns: 1fr; }
+      .pillar-card { min-height: auto; }
+      .pillar-icon { margin-bottom: 15px; }
+      .note { min-height: 125px; }
+      .contact { grid-template-columns: 1fr; gap: 18px; }
+      footer { flex-direction: column; padding: 19px 22px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 43px; }
+      .hero-inner { padding: 34px 22px 18px; }
+      .hero-stamp { width: 52px; height: 52px; font-size: 10px; }
+      .photo-board { min-height: 235px; }
+      .photo-main { height: 210px; }
+      .photo-small { height: 95px; }
+      .day-card { grid-template-columns: 1fr; }
+      .day-photo { min-height: 180px; }
+      .day-copy { padding: 25px 23px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="#inicio" aria-label="Gabriela, ir al inicio">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>EL MURAL DE GABRIELA</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#dia-a-dia">Mi día a día</a>
+        <a href="#pilares">Mis pilares</a>
+        <a href="#reflexiones">Reflexiones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Ideas que también echan raíces</div>
+        <h1 id="titulo-principal">Hola, soy Gabriela.</h1>
+        <p class="hero-copy">Tengo 16 años y vivo en Iquitos, Perú. Me interesan la política, la geopolítica y el feminismo; pronto quiero dar mis primeros pasos en el activismo ambiental. Me gusta entender el mundo para imaginar cómo podemos cuidarlo mejor.</p>
+        <a class="hero-link" href="#pilares">Conoce lo que me mueve <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="photo-board" aria-label="Collage de naturaleza amazónica">
+        <div class="photo-main">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Vegetación frondosa que evoca los paisajes de la Amazonía" fetchpriority="high">
+        </div>
+        <div class="photo-small">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Agua en movimiento, inspiración para cuidar los ríos" loading="lazy">
+        </div>
+        <div class="photo-note">Desde Iquitos,<br>con curiosidad</div>
+      </div>
+      <div class="hero-stamp" aria-hidden="true">ideas<br>con raíz</div>
+    </div>
+  </section>
+
+  <main>
+    <section id="dia-a-dia" aria-labelledby="titulo-dia">
+      <div class="section-heading">
+        <div>
+          <div class="section-number">01 / APRENDER CADA DÍA</div>
+          <h2 id="titulo-dia">Mi día a día</h2>
+        </div>
+        <p class="section-intro">Entre clases, preguntas y nuevas ideas, siempre hay algo que descubrir.</p>
+      </div>
+      <article class="day-card">
+        <img class="day-photo" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Cuadernos y materiales de estudio sobre una mesa" loading="lazy">
+        <div class="day-copy">
+          <span class="day-label">Estudiante · Iquitos</span>
+          <h3>Aprender también es mirar alrededor.</h3>
+          <p>Mis días se reparten entre las clases de la mañana y la tarde. A veces son intensos, pero cada tema nuevo me ayuda a entender mejor lo que pasa cerca y lejos de mí. Esta etapa está llena de preguntas, y quiero seguir aprendiendo para convertir algunas de ellas en acciones.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="pilares" aria-labelledby="titulo-pilares">
+      <div class="section-heading">
+        <div>
+          <div class="section-number">02 / LO QUE ME MUEVE</div>
+          <h2 id="titulo-pilares">Mis pilares</h2>
+        </div>
+        <p class="section-intro">Tres formas de entender el presente y participar en un futuro más justo y sostenible.</p>
+      </div>
+      <div class="pillar-grid">
+        <article class="pillar-card">
+          <div class="pillar-icon" aria-hidden="true">◎</div>
+          <h3>Política y geopolítica</h3>
+          <p>Quiero comprender cómo las decisiones locales y globales afectan nuestra vida cotidiana. Informarme me ayuda a hacer mejores preguntas y a formar mi propio punto de vista.</p>
+        </article>
+        <article class="pillar-card">
+          <div class="pillar-icon" aria-hidden="true">✳</div>
+          <h3>Activismo ambiental</h3>
+          <p>Vivir en Iquitos hace que cuidar la Amazonía se sienta cercano. Es una meta que quiero empezar a convertir en acción: aprender, escuchar a mi comunidad y sumarme a iniciativas ambientales.</p>
+        </article>
+        <article class="pillar-card">
+          <div class="pillar-icon" aria-hidden="true">✿</div>
+          <h3>Feminismo</h3>
+          <p>Me importa construir una sociedad con igualdad y justicia para todas las personas. Las jóvenes también tenemos ideas, voz y liderazgo para impulsar ese cambio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reflexiones" aria-labelledby="titulo-reflexiones">
+      <div class="section-heading">
+        <div>
+          <div class="section-number">03 / NOTAS DEL MURAL</div>
+          <h2 id="titulo-reflexiones">Pequeñas ideas para llevar</h2>
+        </div>
+        <p class="section-intro">Recordatorios breves para seguir pensando, conversando y aprendiendo.</p>
+      </div>
+      <div class="notes-grid">
+        <article class="note">
+          <span class="note-label">Una pregunta</span>
+          <p>¿A quiénes afecta esta decisión y quiénes participaron en tomarla?</p>
+        </article>
+        <article class="note">
+          <span class="note-label">Una idea</span>
+          <p>Piensa en lo global, escucha lo local y cuida lo que tienes cerca.</p>
+        </article>
+        <article class="note">
+          <span class="note-label">Un recordatorio</span>
+          <p>La igualdad también se construye cuando escuchamos las voces jóvenes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto" aria-labelledby="titulo-contacto">
+      <div>
+        <div class="section-number">04 / SIGAMOS LA CONVERSACIÓN</div>
+        <h2 id="titulo-contacto">Las buenas ideas crecen cuando se comparten.</h2>
+      </div>
+      <div>
+        <p class="contact-copy">¿También te interesan la Amazonía, la igualdad o lo que pasa en el mundo? Me encantará conversar, intercambiar lecturas y conocer otras iniciativas. Siempre hay algo nuevo que podemos aprender en comunidad.</p>
+        <span class="contact-note">Aquí puedes añadir tu correo o tus redes sociales.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Gabriela · Iquitos, Perú</span>
+    <span>Un mural en construcción, como todas las buenas ideas.</span>
+  </footer>
+</body>
+</html>
